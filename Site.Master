@@ -1,0 +1,187 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="ETOMS.SiteMaster" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Enlightened Task Order Management System</title>
+    <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <meta name="x-stylesheet-fallback-test" content="" class="sr-only" /><script>!function(a,b,c,d){var e,f=document,g=f.getElementsByTagName("SCRIPT"),h=g[g.length-1].previousElementSibling,i=f.defaultView&&f.defaultView.getComputedStyle?f.defaultView.getComputedStyle(h):h.currentStyle;if(i&&i[a]!==b)for(e=0;e<c.length;e++)f.write('<link href="'+c[e]+'" '+d+"/>")}("position","absolute",["\/Toms\/lib\/bootstrap\/dist\/css\/bootstrap.min.css"], "rel=\u0022stylesheet\u0022 ");</script>
+    <link href="css/site.min.css" rel="stylesheet" />
+    <link href="css/jquery-ui.css" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700&subset=latin,greek' rel='stylesheet' type='text/css'>
+    <link rel="shortcut icon" type="image/x-icon" href="myimages/index.ico">
+    <style type="text/css">
+        .caret 
+        {
+            height: 12px;
+            margin-top: 8px;
+            margin-left: 4px;
+        }
+
+        .navbar 
+        {
+            background-image: none;
+            _background-color: #F8F8F8 !important;
+            background-color: #FAE3C4 !important;
+            _background-color: #d9edf7;
+            _background-color: rgb(86, 61, 124);
+            margin-top:0px !important; 
+        }
+
+        .example3 .navbar-brand 
+        {
+            height: 80px;
+            padding-top: 0px;
+        }
+
+        .example3 .nav > li > a 
+        {
+            padding-top: 20px;
+            padding-bottom: 10px;
+            color: #222;
+            font-size: 18px;
+            text-shadow: 2px 2px 2px #aaa;
+            font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+            font-weight: normal;
+        }
+
+        .example3 .navbar-toggle 
+        {
+            padding: 10px;
+            margin: 25px 15px 25px 0;
+        }
+
+        .divider-vertical 
+        {
+            height: 70px;
+            margin-top: 5px;
+            margin: 0 3px;
+            border-left: 1px solid #aaaaaa;
+            border-right: 1px solid #fff;
+        }
+
+        .example3 .navbar-default .navbar-nav > li > a:hover,
+        .example3 .navbar-default .navbar-nav > li > a:focus 
+        {
+            color: black;
+            font-size: 18px;
+            color: darkred;
+            text-shadow: 0px 0px 11px white;
+            text-decoration: underline;
+        }
+
+        .form-group 
+        {
+            margin-bottom: 2px;
+        }
+    </style>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+</head>
+<body>
+    <form runat="server" class="form-horizontal">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+        <div class="example3" style="margin-top:20px;"> 
+        <nav class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar3">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="login.aspx" style="position:relative;top:-15px;white-space:nowrap">
+                        <div style="position:absolute;bottom:-0px"><span><img src="myimages/EnlImgTr.png" alt="Enlightened"></span></div> <!-- F9AF1C -->
+                        <div style='position:absolute;left:60px;font-family:Roboto Condensed;font-size:30px;font-weight:normal;_color:rgb(86, 61, 124);_color:#21007F;color:#333;font-style:normal;text-shadow: 2px 2px 4px #9A8364;line-height:90%;top:30px;position:relative'><b style="font-size:40px">Task Order</b><br />&nbsp;&nbsp;&nbsp;&nbsp;Management System</div>
+                    </a>
+                </div>
+
+
+                <div id="navbar3" class="navbar-collapse collapse">
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+            <!--/.container-fluid -->
+        </nav>
+
+    </div>
+        <!--
+        <div class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" runat="server" href="~/">Application name</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a runat="server" href="~/">Home</a></li>
+                        <li><a runat="server" href="~/About">About</a></li>
+                        <li><a runat="server" href="~/Contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>-->
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr style="margin-bottom:10px" />
+            <footer style="text-align:center;">
+            <p style="font-size:10px;">Copyright &copy; 2021 Enlightened, Inc. All rights reserved.</p>
+            </footer>
+        </div>
+        </form>
+
+     <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js" crossorigin="anonymous" 
+         integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk"></script>
+     <script>(window.jQuery || document.write("\u003Cscript src=\u0022\/Toms\/lib\/jquery\/dist\/jquery.min.js\u0022 crossorigin=\u0022anonymous\u0022 integrity=\u0022sha384-K\u002BctZQ\u002BLL8q6tP7I94W\u002BqzQsfRV2a\u002BAfHIi9k8z8l9ggpc8X\u002BYtst4yBo\/hH\u002B8Fk\u0022\u003E\u003C\/script\u003E"));</script>
+    <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js" crossorigin="anonymous" 
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
+    </script>
+    <script>(window.jQuery && window.jQuery.fn && window.jQuery.fn.modal || document.write("\u003Cscript src=\u0022\/Toms\/lib\/bootstrap\/dist\/js\/bootstrap.min.js\u0022 crossorigin=\u0022anonymous\u0022 integrity=\u0022sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa\u0022\u003E\u003C\/script\u003E"));</script>
+    <script src="/Toms/js/site.min.js?v=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU"></script>
+    <script src="Scripts/jquery-ui.js"></script>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js" 
+        crossorigin="anonymous" integrity="sha384-Fnqn3nxp3506LP/7Y3j/25BlWeA3PXTyT1l78LjECcPaKCV12TsZP7yyMxOe/G/k">
+    </script>
+    <script>(window.jQuery && window.jQuery.validator || document.write("\u003Cscript src=\u0022\/Toms\/lib\/jquery-validation\/dist\/jquery.validate.min.js\u0022 crossorigin=\u0022anonymous\u0022 integrity=\u0022sha384-Fnqn3nxp3506LP\/7Y3j\/25BlWeA3PXTyT1l78LjECcPaKCV12TsZP7yyMxOe\/G\/k\u0022\u003E\u003C\/script\u003E"));</script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js" 
+        crossorigin="anonymous" integrity="sha384-JrXK+k53HACyavUKOsL+NkmSesD2P+73eDMrbTtTk0h4RmOF8hF8apPlkp26JlyH">
+    </script>
+    <script>(window.jQuery && window.jQuery.validator && window.jQuery.validator.unobtrusive ||
+            document.write("\u003Cscript src=\u0022\/Toms\/lib\/jquery-validation-unobtrusive\/jquery.validate.unobtrusive.min.js\u0022 crossorigin=\u0022anonymous\u0022 integrity=\u0022sha384-JrXK\u002Bk53HACyavUKOsL\u002BNkmSesD2P\u002B73eDMrbTtTk0h4RmOF8hF8apPlkp26JlyH\u0022\u003E\u003C\/script\u003E"));</script>
+
+
+</body>
+</html>
